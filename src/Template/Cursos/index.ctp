@@ -52,7 +52,7 @@
         
         $.ajax({
             method:'get',
-            url: "<?php echo $this->url->build(['controller'=>'Cursos','action'=>'Index']); ?>",
+            url: "/saberesdigitais.darlinton.net/cursos",
             data: {cursoID:data},
             success:function(response){
                 
