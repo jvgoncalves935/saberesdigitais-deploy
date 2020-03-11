@@ -36,7 +36,7 @@
         
         $.ajax({
             method:'get',
-            url: "<?php echo $this->url->build(['controller'=>'Aulas','action'=>'Search']); ?>",
+            url: "http://saberesdigitais.darlinton.net/aulas/search",
             data: {cursoID:data},
             success:function(response){
                 limparListaMaterias(select);
@@ -69,7 +69,7 @@
         
         $.ajax({
             method:'get',
-            url: "<?php echo $this->url->build(['controller'=>'Requisitos','action'=>'Search']); ?>",
+            url: "http://saberesdigitais.darlinton.net/requisitos/search",
             data: {materiaID:data},
             success:function(response){
                 limparListaMaterias(select);

@@ -193,7 +193,7 @@ class AulasController extends AppController
     public function search(){
         
         $this->request->allowMethod(['ajax','get']);
-        $cursoID = $this->request->query('cursoID');
+        $cursoID = $this->request->getQuery('cursoID');
         
         $_query = TableRegistry::get('materias')->find();
         $_query = TableRegistry::getTableLocator()->get('materias')->find()
