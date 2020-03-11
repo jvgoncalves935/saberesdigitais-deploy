@@ -4,7 +4,7 @@
         if(resposta){
             $.ajax({
                 method:'get',
-                url: "<?php echo $this->url->build(['controller'=>'Aulas','action'=>'Solicitarautorizacao']); ?>",
+                url: "http://saberesdigitais.darlinton.net/aulas/solicitarautorizacao",
                 data: {materiaID:_materiaID,cpfAluno:_cpfAluno},
                 success:function(response){
                     
@@ -79,7 +79,7 @@
         
         $.ajax({
             method:'get',
-            url: "<?php echo $this->url->build(['controller'=>'Aulas','action'=>'Search']); ?>",
+            url: "search",
             data: {cursoID:data},
             success:function(response){
                 limparListaMaterias(select);
@@ -110,7 +110,7 @@
     function verificarAutorizacaoAulas(materiaID){
         $.ajax({
             method:'get',
-            url: "<?php echo $this->url->build(['controller'=>'Aulas','action'=>'VerificarAutorizacaoAulas']); ?>",
+            url: "http://saberesdigitais.darlinton.net/aulas/verificar-autorizacao-aulas",
             data: {materiaID:data},
             success:function(response){
                 var json = JSON.parse(response);
