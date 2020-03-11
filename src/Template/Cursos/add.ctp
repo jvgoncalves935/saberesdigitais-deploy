@@ -29,7 +29,7 @@
             );
             */
             
-            echo $this->Form->input('Perfis',[
+            echo $this->Form->control('Perfis',[
                 'type'=>'select',
                 'label'=>'Perfis do Curso',
                 'multiple'=>'checkbox',
