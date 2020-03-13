@@ -64,9 +64,18 @@ class UsuariosController extends AppController
     public function add()
     {
         $usuario = $this->Usuarios->newEntity();
+        $tabelaEscolas = TableRegistry::getTableLocator()->get('escolas');
+        $escolasQuery = $tabelaEscolas->find();
+
+        $escolas = array();
+        foreach($escolasQuery as $escolaAux){
+            $escolas[$escolaAux['EscolaID']] = $escolaAux['Nome'];
+        }
+
         //debug(WWW_ROOT);
         if ($this->request->is('post')) {
             $usuario = $this->Usuarios->patchEntity($usuario, $this->request->getData());
+            $dados = $this->request->getData();
             //debug($this->request->getData());
             
             $alunosTable = TableRegistry::get('alunos');
@@ -79,8 +88,10 @@ class UsuariosController extends AppController
             $aluno->Level = 1;
             $aluno->EXPTotal = 0;
 
+            $imagemNotNull = false;
             if($this->request->getData()['Foto']){
                 $usuario->Foto = $this->request->getData()['Foto']['name'];
+                $imagemNotNull = true;
             }
             
             //debug($aluno);
@@ -89,7 +100,10 @@ class UsuariosController extends AppController
 
             if ($this->Usuarios->save($usuario) && $alunosTable->save($aluno)) {
                 $this->Flash->success(__('Usuário salvo com sucesso.'));
-                $this->uploadFoto($usuario->Email, $this->request->getData()['Foto']);
+
+                if($imagemNotNull){
+                    $this->uploadFoto($usuario->Email, $this->request->getData()['Foto']);
+                }
 
                 return $this->redirect(['controller'=>'Usuarios','action' => 'add']);
             }
@@ -97,6 +111,7 @@ class UsuariosController extends AppController
             return $this->redirect(['controller'=>'Usuarios','action' => 'add']);
         }
         $this->set(compact('usuario'));
+        $this->set(compact('escolas'));
     }
 
     /**

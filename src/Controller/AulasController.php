@@ -754,7 +754,7 @@ class AulasController extends AppController
 
         $contagemCursos = 0;
         foreach($cursosAux as $cursoX){
-            debug($cursosMateriasX[$cursoX['CursoID']]." ".$cursosMaterias[$cursoX['CursoID']]);
+            //debug($cursosMateriasX[$cursoX['CursoID']]." ".$cursosMaterias[$cursoX['CursoID']]);
             if($cursosMateriasX[$cursoX['CursoID']] == $cursosMaterias[$cursoX['CursoID']]){
                 $contagemCursos += 1;
             }
