@@ -51,6 +51,10 @@
                 'type'=>'select',
                 'options'=>$tutoresNomes
             ]);
+            echo $this->Form->control('Escola',[
+                'type'=>'select',
+                'options'=>$escolas
+            ]);
             echo $this->Form->control('Foto',['type' => 'file']);
             echo $this->Form->control('Senha');
         ?>

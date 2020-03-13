@@ -74,6 +74,9 @@ class UsuariosTable extends Table
             ->notEmptyString('Genero');
 
         $validator->add('Foto',[
+            'optionalUpload' => [
+                'rule' => ['uploadedFile', ['optional' => true]]
+            ],
             'mimeType' => [
                 'rule' => ['mimeType', ['image/png','image/jpg','image/gif']],
                 'message' => 'Arquivos de imagem suportados: png, jpg e gif.'
@@ -81,8 +84,8 @@ class UsuariosTable extends Table
             'fileSize' => [
                 'rule' => ['fileSize','<','5MB'],
                 'message' => 'Limite do tamanho do arquivo: 5MB.'
-            ]
-        ]);
+            ],
+        ])->allowEmptyFile('Foto','create');
 
         $validator
             ->scalar('Senha')
