@@ -149,7 +149,8 @@
     <footer>
         <div id="footer" align="center">
             <br><br><br>
-            <p style="font-size:10px">Plataforma Saberes Digitais. Desenvolvida por: João Vítor Gonçalves. Laboratório de Engenharia de Software -  Universidade Federal de São João Del Rei. 2020.</p>
+            <p style="font-size:10px">Plataforma Saberes Digitais. Desenvolvida por: João Vítor Gonçalves.</p>
+            <p style="font-size:10px">Grupo SI3 (Sistemas de Informação Interativos, Inteligentes e Inovadores) - Universidade Federal de São João Del Rei. 2020.</p>
         </div>
     </footer>
 </body>
