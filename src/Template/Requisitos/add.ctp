@@ -93,7 +93,7 @@
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Visualizar Aulas'), ['controller'=>'Aulas','action' => 'index']) ?></li>
     </ul>
 </nav>
@@ -137,6 +137,6 @@
             </select>
         </div>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

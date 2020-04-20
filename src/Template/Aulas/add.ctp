@@ -122,7 +122,7 @@
 
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Visualizar Aulas'), ['controller'=>'Aulas','action' => 'index']) ?></li>
     </ul>
 </nav>
@@ -160,7 +160,7 @@
             //echo $this->Form->control('Pergunta01');
             echo $this->Form->control('Pergunta02',[
                 'type'=>'radio',
-                'label'=>'Pergunta 2: Qual foi a sua dificuldade em relação ao aprendizado do do conteúdo desta aula?',
+                'label'=>'Pergunta 2: Qual foi a sua dificuldade em relação ao aprendizado do conteúdo desta aula?',
                 'id'=>'pergunta02RadioGroup',
                 'options'=>[
                         '1' => '1 (Muito difícil)',
@@ -186,6 +186,6 @@
             );
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

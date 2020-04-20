@@ -64,7 +64,7 @@
 <?php if($isAdmin || $isTutor){ ?>
     <nav class="large-3 medium-4 columns" id="actions-sidebar">
         <ul class="side-nav">
-            <li class="heading"><?= __('Actions') ?></li>
+            <li class="heading"><?= __('Ações') ?></li>
             <li><?= $this->Html->link(__('Adicionar Curso'), ['action' => 'add']) ?></li>
         </ul>
     </nav>

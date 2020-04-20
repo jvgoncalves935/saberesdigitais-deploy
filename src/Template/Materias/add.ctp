@@ -15,10 +15,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Materias'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Cursos'), ['controller' => 'Cursos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Curso'), ['controller' => 'Cursos', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Listar Materias'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listar Cursos'), ['controller' => 'Cursos', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Adicionar Curso'), ['controller' => 'Cursos', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="materias form large-9 medium-8 columns content">

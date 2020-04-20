@@ -35,6 +35,6 @@
             echo $this->Form->control('Senha');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Alterar')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

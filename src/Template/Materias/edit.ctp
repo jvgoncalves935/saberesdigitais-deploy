@@ -30,7 +30,7 @@
 <div class="materias form large-9 medium-8 columns content">
     <?= $this->Form->create($materia) ?>
     <fieldset>
-        <legend><?= __('Edit Materia') ?></legend>
+        <legend><?= __('Editar Materia') ?></legend>
         <?php
             echo $this->Form->control('Nome');
             echo $this->Form->control('EXPMateria');
@@ -40,6 +40,6 @@
             ]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

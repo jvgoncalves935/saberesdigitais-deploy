@@ -33,7 +33,7 @@
 <div class="usuarios form large-9 medium-8 columns content">
     <?= $this->Form->create($usuario,['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Add Usuario') ?></legend>
+        <legend><?= __('Adicionar Usuario') ?></legend>
         <?php
             
             echo $this->Form->control('Nome');
@@ -59,6 +59,6 @@
             echo $this->Form->control('Senha');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Enviar')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

@@ -98,7 +98,7 @@
         </tbody>
     </table>
     <?php if(!empty($aulas)){ ?>
-        <?= $this->Form->button(__('Submit')) ?>
+        <?= $this->Form->button(__('Salvar')) ?>
     <?php }; ?>
     <?= $this->Form->end() ?>
 </div>

@@ -35,8 +35,8 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Escolas'), ['action' => 'index']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Listar Escolas'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="escolas form large-9 medium-8 columns content">
@@ -52,6 +52,6 @@
             ]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Adicionar')) ?>
     <?= $this->Form->end() ?>
 </div>
