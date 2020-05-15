@@ -8,8 +8,8 @@
     <?= $this->Form->create() ?>
     <fieldset>
         <legend><?= __('Digite seu e-mail e sua senha') ?></legend>
-        <?= $this->Form->control('username') ?>
-        <?= $this->Form->control('password') ?>
+        <?= $this->Form->control('username',['label'=>'E-mail']) ?>
+        <?= $this->Form->control('password',['label'=>'Senha']) ?>
     </fieldset>
     <?= $this->Form->button(__('Login')); ?>
     <?= $this->Form->end() ?>

@@ -69,7 +69,11 @@
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->meta(
+    'favicon.ico',
+    '/favicon.ico',
+    ['type' => 'icon']
+    ) ?>
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
@@ -82,7 +86,12 @@
 <body>
     <?php if($logIn){ ?>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
+        <div class="title-area medium-2 medium-1 columns">
+            <ul class="left">
+                <?php echo $this->Html->image("saberesdigitaislogo.png", ['pathPrefix' => "webroot/img/saberesdigitais_logo/"]); ?>
+            </ul>
+        </div>
+        <ul class="title-area large-3 medium-2 columns">
             <li class="name">
                 <h1><a href=""><?= $nome .', Level ' . $level ?></a></h1>
             </li>
