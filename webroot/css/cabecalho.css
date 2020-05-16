@@ -1,0 +1,31 @@
+.cabecalho{
+    background-color: white;
+    height: 130px;
+    width: 100%;
+}
+
+.logo-sbr-dg{
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 30%;
+}
+
+.menu-sbr-dg{
+    float: right;
+    width: 70%;
+}
+
+.menu-sbr-dg ul li{
+    display: inline-block;
+}
+
+.menu-sbr-dg ul li a{
+    color: black;
+    margin-right: 30px;
+}
+
+.menu-sbr-dg ul li a:hover{
+    border-top: 5px solid rgb(12, 180, 209);
+    border-width: 3px;
+}
