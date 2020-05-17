@@ -11,21 +11,37 @@
     width: 30%;
 }
 
-.menu-sbr-dg{
-    float: right;
+.left-sbr-dg{
     width: 70%;
+    list-style: none;
+    float: right;
 }
 
-.menu-sbr-dg ul li{
+.left-sbr-dg li{
     display: inline-block;
 }
 
-.menu-sbr-dg ul li a{
+.left-sbr-dg li a{
     color: black;
-    margin-right: 30px;
+    padding: 14px;
+    text-decoration: none;
+    display: block;
 }
 
-.menu-sbr-dg ul li a:hover{
-    border-top: 5px solid rgb(12, 180, 209);
-    border-width: 3px;
+.left-sbr-dg li a:hover{
+    color: rgb(12, 180, 209);
+}
+
+.left-sbr-dg li ul{
+    position: absolute;
+    display: none;
+}
+
+.left-sbr-dg li:hover ul, .left-sbr-dg li.over ul{
+    display: block;
+}
+
+.left-sbr-dg li ul li{
+    display: block;
+    width: 170px;
 }

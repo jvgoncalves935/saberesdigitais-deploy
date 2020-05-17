@@ -55,7 +55,7 @@ class AppController extends Controller
                 ]
             ],
             'loginAction' => ['controller' => 'usuarios', 'action' => 'login'],
-            'loginRedirect' => ['controller' => 'usuarios', 'action' => 'index'],
+            'loginRedirect' => ['controller' => 'usuarios', 'action' => 'pagina_inicial'],
             'logoutRedirect' => ['controller' => 'usuarios', 'action' => 'logout'],
             'authError' => 'Sua sessão expirou. Faça login novamente.'
         ]);
@@ -63,6 +63,7 @@ class AppController extends Controller
         $this->Auth->setConfig('authenticate',[
             AuthComponent::ALL => ['userModel' => 'usuarios']
         ]);
+
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
