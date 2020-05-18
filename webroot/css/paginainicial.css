@@ -1,0 +1,16 @@
+.paginainicialdiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.paginainicialdivimg{
+    display: flex;
+    flex: 1 1 50px;
+}
+
+.paginainicialtext{
+    flex: 1 1 100px;
+    top: 20px;
+    left: 20px;
+    align-self: auto;
+}
