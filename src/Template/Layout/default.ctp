@@ -116,34 +116,34 @@
                     <li>
                         <?= $this->Html->link(__('Recomendações'), ['controller' => 'alunos', 'action' => 'recomendacoes']); ?>
                     </li>
+                    <?php if($isAdmin || $isTutor){ ?>
                     <li>
                         <a href="#">Admin</a>
                         <ul>
-                            <?php if($isAdmin || $isTutor){ ?>
-                                <li>
-                                    <?= $this->Html->link(__('Validar Aulas'), ['controller' => 'aulas', 'action' => 'validar']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Solicitações'), ['controller' => 'aulas', 'action' => 'solicitacoes']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Gerenciar Escolas'), ['controller' => 'escolas', 'action' => 'index']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Matérias'), ['controller' => 'materias', 'action' => 'index']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Requisitos'), ['controller' => 'requisitos', 'action' => 'index']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Tutores'), ['controller' => 'tutores', 'action' => 'index']); ?>
-                                </li>
-                                <li>
-                                    <?= $this->Html->link(__('Usuários'), ['controller' => 'usuarios', 'action' => 'index']); ?>
-                                </li>
-                            <?php ;} ?>
+                            <li>
+                                <?= $this->Html->link(__('Validar Aulas'), ['controller' => 'aulas', 'action' => 'validar']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Solicitações'), ['controller' => 'aulas', 'action' => 'solicitacoes']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Gerenciar Escolas'), ['controller' => 'escolas', 'action' => 'index']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Matérias'), ['controller' => 'materias', 'action' => 'index']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Requisitos'), ['controller' => 'requisitos', 'action' => 'index']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Tutores'), ['controller' => 'tutores', 'action' => 'index']); ?>
+                            </li>
+                            <li>
+                                <?= $this->Html->link(__('Usuários'), ['controller' => 'usuarios', 'action' => 'index']); ?>
+                            </li>
                         </ul>
                     </li>
+                    <?php ;} ?>
                     <li>
                         <?= $this->Html->link(__('Sair'), ['controller' => 'usuarios', 'action' => 'logout']); ?>
                     </li>
