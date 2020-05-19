@@ -34,10 +34,13 @@
 
 .left-sbr-dg li ul{
     position: absolute;
+    background-color: white;
     display: none;
+    
 }
 
 .left-sbr-dg li:hover ul, .left-sbr-dg li.over ul{
+    background-color: white;
     display: block;
 }
 

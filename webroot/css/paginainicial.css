@@ -1,16 +1,25 @@
 .paginainicialdiv{
+    /*
     display: flex;
     flex-direction: column;
+    */
+    
 }
 
 .paginainicialdivimg{
+    align-items: stretch;
+    /*
     display: flex;
-    flex: 1 1 50px;
+    flex: 0.5 1 50px;
+    */
 }
 
 .paginainicialtext{
+    /*
     flex: 1 1 100px;
-    top: 20px;
-    left: 20px;
-    align-self: auto;
+    */
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
 }
