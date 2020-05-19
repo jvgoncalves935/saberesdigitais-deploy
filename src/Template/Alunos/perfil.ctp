@@ -30,12 +30,17 @@
                             <tr><td><?= h("Tutor: ".$tutor->Nome) ?></td></tr>
                             <tr><td><?= h("Escola: ".$escola->Nome) ?></td></tr>
                             <tr><td><?= h("Level: ".$aluno->Level) ?></td></tr>
-                            <tr><td><?= h("EXP: ".$aluno->EXPTotal) ?></td></tr>
+                            <tr><td><?= h("EXP: ".$aluno->EXPTotal.", Prox. LVL: ".$xpProximoLevelNormal) ?></td></tr>
                             
                             <tr>
                                 <td>
                                     <table id="progresso_xp">
-                                        <tr><span style='background-color:#F5AA42;display:block;width:<?= h($porcentagemLevel) ?>%'><?= h("[".$aluno->EXPTotal."/".$xpProximoLevelNormal."]") ?></span></tr>
+                                        <tr>
+                                            <td style="width:100%;height:100%;">
+                                                <progress style="width:100%;" max="100" value="<?= h($porcentagemLevel) ?>"></progress>
+                                                
+                                            </td>
+                                        </tr>
                                     </table>
                                 </td>
                             </tr>
