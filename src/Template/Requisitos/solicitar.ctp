@@ -21,7 +21,6 @@
         $.ajax({
             method:'get',
             url: "http://saberesdigitais.darlinton.net/aulas/search",
-            //url: "<?php echo $this->url->build(['controller'=>'Aulas','action'=>'Search']); ?>",
             data: {cursoID:data},
             success:function(response){
                 limparListaMaterias(select);
@@ -43,6 +42,7 @@
         if(idComboBox == "materiaRequisitoIDComboBox"){
             //pesquisarRequisitos(cursoID,idComboBox);
         }
+        
     }
 
     function pesquisarRequisitos(materiaID,idComboBox){
