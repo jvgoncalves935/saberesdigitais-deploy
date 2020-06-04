@@ -39,7 +39,7 @@
         <?php if($isAdmin || $isTutor){ ?>
         <li><?= $this->Html->link(__('Validar Aula'), ['action' => 'validar']) ?></li>
         <?php ;} ?>
-        <li><?= $this->Html->link(__('Solicitar Quebra de Requisitos'), ['controller'=>'Requisitos','action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Solicitar Quebra de Requisitos'), ['controller'=>'Requisitos','action' => 'solicitar']) ?></li>
         <?php if($isAdmin || $isTutor){ ?>
         <li><?= $this->Html->link(__('Validar Solicitações de Quebra de Requisitos'), ['action' => 'solicitacoes']) ?></li>
         <?php ;} ?>

@@ -159,7 +159,56 @@ class RequisitosController extends AppController
 
     public function solicitar(){
         $requisitos = $this->paginate($this->Requisitos);
+        $materias = array();
+        $cursos = array();
+
+        /*
+        $tabelaMaterias = TableRegistry::getTableLocator()->get('materias');
+        $materiasQuery = $tabelaMaterias->find()->select(['Nome', 'MateriaID']);
+        */
+
+        $tabelaCursos = TableRegistry::getTableLocator()->get('cursos');
+        $cursosQuery = $tabelaCursos->find()->select(['Nome', 'CursoID']);
+
+        foreach($cursosQuery as $curso){
+            $cursos[$curso['CursoID']] = $curso['Nome'];
+        }
 
         $this->set(compact('requisitos'));
+        $this->set(compact('materias'));
+        $this->set(compact('cursos'));
+        
+        if($this->request->is('post') || $this->request->is('put')){
+            $dados = $this->request->getData();
+            //debug($dados);
+
+            $session = new Session();
+            $cpf = $session->consume('Auth.User.Cpf');
+
+            $solicitacaoTable = TableRegistry::getTableLocator()->get('solicitacoes');
+            $queryVerificarSolicitacaoExistente = $solicitacaoTable->find()->where(['CPFAluno' => $cpf,'MateriaID'=> $dados['Materia']])->first();
+
+            if(!empty($queryVerificarSolicitacaoExistente)){
+                return $this->Flash->error(__('Erro: Solicitação de quebra de requisito já foi criada para esta matéria.'));
+            }
+
+            $tabelaAlunos = TableRegistry::getTableLocator()->get('alunos');
+            $aluno = $tabelaAlunos->find()->where(['CpfAluno' => $cpf])->first();
+
+            $solicitacao = $solicitacaoTable->newEntity();
+            $solicitacao['Autorizada'] = false;
+            $solicitacao['MateriaID'] = $dados['Materia'];
+            $solicitacao['CPFAluno'] = $cpf;
+            $solicitacao['CPFTutor'] = $aluno['CpfTutor'];
+            //debug($solicitacao);
+
+            
+            if ($solicitacaoTable->save($solicitacao)) {
+                $this->Flash->success(__('Solicitacao registrada com sucesso.'));
+            }
+            
+        }
+
+        
     }
 }
