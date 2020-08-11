@@ -85,7 +85,7 @@
 </head>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <body>
-    <?php if($logIn){ ?>
+    
     <nav class="top-bar expanded" data-topbar role="navigation">
         <div class="cabecalho">
             <div class="logo-sbr-dg">
@@ -96,26 +96,29 @@
                     <li>
                         <?= $this->Html->link(__('Início'), ['controller' => 'usuarios', 'action' => 'pagina_inicial']); ?>
                     </li>
-                    <li>
-                        <?= $this->Html->link(__('Perfil'), ['controller' => 'alunos', 'action' => 'perfil',$idUser]); ?>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(__('Aulas'), ['controller' => 'aulas', 'action' => 'index']); ?>
-                    </li>
+                    <?php if($logIn){ ?>
+                        <li>
+                            <?= $this->Html->link(__('Perfil'), ['controller' => 'alunos', 'action' => 'perfil',$idUser]); ?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('Aulas'), ['controller' => 'aulas', 'action' => 'index']); ?>
+                        </li>
+                    
                     
                         <li>
                             <?= $this->Html->link(__('Escola'), ['controller' => 'alunos', 'action' => 'visualizar_alunos']); ?>
                         </li>
-                    
-                    <li>
-                        <?= $this->Html->link(__('Conquistas'), ['controller' => 'conquistas', 'action' => 'index']); ?>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(__('Cursos'), ['controller' => 'cursos', 'action' => 'index']); ?>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(__('Recomendações'), ['controller' => 'alunos', 'action' => 'recomendacoes']); ?>
-                    </li>
+                        
+                        <li>
+                            <?= $this->Html->link(__('Conquistas'), ['controller' => 'conquistas', 'action' => 'index']); ?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('Cursos'), ['controller' => 'cursos', 'action' => 'index']); ?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('Recomendações'), ['controller' => 'alunos', 'action' => 'recomendacoes']); ?>
+                        </li>
+                    <?php ;} ?>
                     <?php if($isAdmin || $isTutor){ ?>
                     <li>
                         <a href="#">Admin</a>
@@ -144,14 +147,23 @@
                         </ul>
                     </li>
                     <?php ;} ?>
-                    <li>
-                        <?= $this->Html->link(__('Sair'), ['controller' => 'usuarios', 'action' => 'logout']); ?>
-                    </li>
+                    <?php if($logIn){ ?>
+                        <li>
+                            <?= $this->Html->link(__('Sair'), ['controller' => 'usuarios', 'action' => 'logout']); ?>
+                        </li>
+                    <?php ;} ?>
+                    <?php if(!$logIn){ ?>
+                        <li>
+                            <?= $this->Html->link(__('Criar conta'), ['controller' => 'usuarios', 'action' => 'add_usuario']); ?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('Entrar'), ['controller' => 'usuarios', 'action' => 'login']); ?>
+                        </li>
+                    <?php ;} ?>
                 </ul>
             </div>
         </div>
     </nav>
-    <?php ;} ?>
     
     <?= $this->Flash->render() ?>
     <div class="container clearfix">

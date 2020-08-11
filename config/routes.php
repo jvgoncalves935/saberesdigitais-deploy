@@ -72,6 +72,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/login', ['controller' => 'usuarios', 'action' => 'login']);
     $routes->connect('/webroot/usuarios', ['controller' => 'usuarios', 'action' => 'index']);
     $routes->connect('/logout', ['controller' => 'usuarios', 'action' => 'logout']);
+    $routes->connect('/usuarios/add', ['controller' => 'usuarios', 'action' => 'add_usuario']);
+    
 
     /**
      * Connect catchall routes for all controllers.
