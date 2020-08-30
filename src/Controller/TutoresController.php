@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Tutores Controller
@@ -102,5 +103,50 @@ class TutoresController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function relatorioAulas()
+    {
+        $tabelaCursos = TableRegistry::getTableLocator()->get('cursos');
+        $cursosQuery = $tabelaCursos->find()->select(['CursoID','Nome']);
+        $cursosIDs = array();
+        foreach($cursosQuery as $curso){
+            $cursosIDs[$curso['CursoID']] = $curso['Nome'];
+        }
+
+        $tabelaUsuarios = TableRegistry::getTableLocator()->get('usuarios');
+        $usuariosQuery = $tabelaUsuarios->find()->select(['Cpf','Nome']);
+        $usuariosIDs = array();
+        foreach($usuariosQuery as $usuario){
+            $usuariosIDs[$usuario['Cpf']] = $usuario['Nome'];
+        }
+
+        $tabelaMaterias = TableRegistry::getTableLocator()->get('materias');
+        $materiasQuery = $tabelaMaterias->find()->select(['MateriaID','Nome','CursoID']);
+        $materiasIDs = array();
+        $materiasCursos = array();
+        foreach($materiasQuery as $materia){
+            $materiasIDs[$materia['MateriaID']] = $materia['Nome'];
+            $materiasCursos[$materia['MateriaID']] = $materia['CursoID'];
+        }
+        
+        $tabelaAulas = TableRegistry::getTableLocator()->get('aulas');
+        $aulasQuery = $tabelaAulas->find('all', array(
+            'order' => 'Cpf ASC'
+            ))->where(['Validada' => true]);
+        
+        $aulasArray = array();
+        
+        foreach($aulasQuery as $aula){
+            //$aula['NomeMateria'] = $materiasIDs[$aula['MateriaID']];
+            $aulasArray[$aula['ID']] = $aula;
+            //debug($aula['ID']." ". $aula['Cpf']);
+        }
+        //debug($aulasArray);
+
+        $this->set(compact('aulasArray'));
+        $this->set(compact('usuariosIDs'));
+        $this->set(compact('materiasIDs'));
+        $this->set(compact('materiasCursos'));
+        $this->set(compact('cursosIDs'));
     }
 }
