@@ -86,7 +86,7 @@
                 <th scope="col"><?= __('Aluno') ?></th>
                 <th scope="col"><?= __('CPF') ?></th>
                 <th scope="col"><?= __('Materia') ?></th>
-                <th scope="col"><?= __('Materia ID') ?></th>
+                <th scope="col"><?= __('Curso') ?></th>
                 <th scope="col" class="actions"><?= __('Ação') ?></th>
             </tr>
         </thead>
@@ -101,7 +101,7 @@
                         <td><?= h($aula['NomeAluno']) ?></td>
                         <td><?= h($aula['Cpf']) ?></td>
                         <td><?= h($aula['NomeMateria']) ?></td>
-                        <td><?= h($aula['MateriaID']) ?></td>
+                        <td><?= h($nomesCursos[$cursosMaterias[$aula['MateriaID']]]) ?></td>
                         <td class="actions">
                             <?php
                                 echo $this->Form->control('Validar',[
