@@ -2,6 +2,8 @@
 
 /vendor/*
 /config/app.php
+/webroot/img/user_data
+
 
 /tmp/cache/models/*
 !/tmp/cache/models/empty
