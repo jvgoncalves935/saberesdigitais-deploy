@@ -314,6 +314,25 @@ class AulasController extends AppController
         if($this->request->is('post')) {
             $this->parserValidacaoAulas($this->request->getData());
         }
+
+        $tabelaCursos = TableRegistry::getTableLocator()->get('cursos');
+        $cursos = $tabelaCursos->find()->select(['Nome','CursoID']);
+        $nomesCursos = array();
+
+        foreach($cursos as $curso){
+            $nomesCursos[$curso['CursoID']] = $curso['Nome'];
+        }
+
+        $tabelaMaterias = TableRegistry::getTableLocator()->get('materias');
+        $materias = $tabelaMaterias->find()->select(['CursoID','MateriaID']);
+        $cursosMaterias = array();
+
+        foreach($materias as $materia){
+            $cursosMaterias[$materia['MateriaID']] = $materia['CursoID'];
+        }
+        
+        $this->set(compact('cursosMaterias'));
+        $this->set(compact('nomesCursos'));
         
     }
 
