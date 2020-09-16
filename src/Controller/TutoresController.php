@@ -149,4 +149,33 @@ class TutoresController extends AppController
         $this->set(compact('materiasCursos'));
         $this->set(compact('cursosIDs'));
     }
+
+    public function relatorioPerfis(){
+        $tabelaUsuarios = TableRegistry::getTableLocator()->get('usuarios');
+        $usuariosQuery = $tabelaUsuarios->find()->select(['Cpf','Nome']);
+        $usuariosIDs = array();
+        foreach($usuariosQuery as $usuario){
+            $usuariosIDs[$usuario['Cpf']] = $usuario['Nome'];
+        }
+
+        $tabelaPerfis = TableRegistry::getTableLocator()->get('perfis_tipos');
+        $perfisQuery = $tabelaPerfis->find()->select(['CPF','Perfil']);
+        $perfisArrays = array();
+        $perfisArrays['1'] = array();
+        $perfisArrays['2'] = array();
+        $perfisArrays['3'] = array();
+        $perfisArrays['4'] = array();
+        $perfisArrays['5'] = array();
+        $perfisArrays['6'] = array();
+
+        foreach($perfisQuery as $perfil){
+            array_push($perfisArrays[$perfil['Perfil']],$usuariosIDs[$perfil['CPF']]);
+        }
+
+        //Iniciante,Empresarial,Programador,Gamer,Especialista em Redes,Robótica
+        $nomesPerfis = array('1'=>'Iniciante','2'=>'Empresarial','3'=>'Programador','4'=>'Gamer','5'=>'Especialista em Redes','6'=>'Robótica');
+
+        $this->set(compact('perfisArrays'));
+        $this->set(compact('nomesPerfis'));
+    }
 }
