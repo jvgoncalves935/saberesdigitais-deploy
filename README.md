@@ -21,3 +21,13 @@ A plataforma online foi desenvolvida utilizando os seguintes recursos:
 
 A plataforma online pode ser acessada pelo link abaixo:
 http://saberesdigitais.darlinton.net
+
+
+
+## Instruções
+
+- Baixe o repositório.
+- Instale o PHP 7.3, Apache e PHPMyAdmin (ou outro SGDB similar).
+- Configure o arquivo config/app.php de acordo com as especificações da sua futura base de dados.
+- Crie um novo banco de dados no PHPMyAdmin usando como referencia o arquivo exemplo.sql.
+- Crie um novo usuário na plataforma e adicione ele manualmente na tabela "administradores" do seu BD.
