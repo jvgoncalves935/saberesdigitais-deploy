@@ -26,7 +26,8 @@ http://saberesdigitais.darlinton.net
 
 ## Instruções
 
-- Baixe o repositório.
+- Baixe o CakePHP 3.8.1: https://mega.nz/file/ktsGUZYB#5wfm5sSSHICiX3epE2LxmjvDAUrHcsmYCQrx3JHgnJA
+- Baixe o repositório e substitua todos os arquivos do repositório por cima dos arquivos do CakePHP.
 - Instale o PHP 7.3, Apache e PHPMyAdmin (ou outro SGDB similar).
 - Configure o arquivo config/app.php de acordo com as especificações da sua futura base de dados.
 - Crie um novo banco de dados no PHPMyAdmin usando como referencia o arquivo exemplo.sql.
